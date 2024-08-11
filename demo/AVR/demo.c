@@ -42,6 +42,7 @@ main( void )
     const UCHAR     ucSlaveID[] = { 0xAA, 0xBB, 0xCC };
     eMBErrorCode    eStatus;
 
+    // MODBUS RTU SLAVE ADDRESS 10, USART0 38400 8E1.
     eStatus = eMBInit( MB_RTU, 0x0A, 0, 38400, MB_PAR_EVEN );
 
     eStatus = eMBSetSlaveID( 0x34, TRUE, ucSlaveID, 3 );
@@ -55,7 +56,10 @@ main( void )
         ( void )eMBPoll(  );
 
         /* Here we simply count the number of poll cycles. */
-        usRegInputBuf[0]++;
+        usRegInputBuf[0]++   ; // INPUT REGISTER  999 int16
+        usRegInputBuf[1] =  2; // INPUT REGISTER 1000 int16
+        usRegInputBuf[2] =  3; // INPUT REGISTER 1001 int16
+        usRegInputBuf[3] = -5; // INPUT REGISTER 1002 int16
     }
 }
 
