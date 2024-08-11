@@ -78,8 +78,26 @@ typedef long    LONG;
 #define UDR             UDR0
 #define SIG_UART_TRANS  SIG_USART_TRANS
 
-#elif defined (__AVR_ATmega169__)
+#elif defined (__AVR_ATmega328P__)
+#define UCSRB           UCSR0B
+#define TXEN            TXEN0
+#define RXEN            RXEN0
+#define RXCIE           RXCIE0
+#define TXCIE           TXCIE0
+#define UDRE            UDRIE0
+#define UBRR            UBRR0
+#define UCSRC           UCSR0C
+#define UPM1            UPM01
+#define UPM0            UPM00
+#define UCSZ0           UCSZ00
+#define UCSZ1           UCSZ01
+#define UDR             UDR0
+#define SIG_USART_DATA  USART_UDRE_vect
+#define SIG_USART_RECV  USART_RX_vect
+#define SIG_UART_TRANS  USART_TX_vect
+#define SIG_OUTPUT_COMPARE1A  TIMER1_COMPA_vect
 
+#elif defined (__AVR_ATmega169__)
 #define SIG_UART_TRANS  SIG_USART_TRANS
 
 #elif defined (__AVR_ATmega8__)
