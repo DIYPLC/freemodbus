@@ -28,6 +28,7 @@
 #include "mbport.h"
 
 /* ----------------------- Defines ------------------------------------------*/
+#define F_CPU 16000000UL // Arduino Nano quartz resonator Hz.
 #define REG_INPUT_START 1000
 #define REG_INPUT_NREGS 4
 
