@@ -102,7 +102,9 @@ xMBPortSerialInit( UCHAR ucPORT, ULONG ulBaudRate, UCHAR ucDataBits, eMBParity e
             break;
     }
 
-#if defined (__AVR_ATmega168__)
+#if defined (__AVR_ATmega328__)
+    UCSRC |= ucUCSRC;
+#elif defined (__AVR_ATmega168__)
     UCSRC |= ucUCSRC;
 #elif defined (__AVR_ATmega169__)
     UCSRC |= ucUCSRC;
