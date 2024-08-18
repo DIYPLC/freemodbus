@@ -61,11 +61,8 @@ static USHORT   usRegHoldingBuf[REG_HOLDING_NREGS];
 int
 main( void )
 {
-    const UCHAR     ucSlaveID[] = { 0xAA, 0xBB, 0xCC };
+    //const UCHAR     ucSlaveID[] = { 0xAA, 0xBB, 0xCC };
     eMBErrorCode    eStatus;
-
-    // MODBUS RTU SLAVE ADDRESS 10, USART0 38400 8E1.
-    //eStatus = eMBInit( MB_RTU, 0x0A, 0, 38400, MB_PAR_EVEN );
 
     // MODBUS ASCII SLAVE ADDRESS 1, USART0 57600 8N1.
     //eStatus = eMBInit( MB_ASCII, 1, 0, 57600, MB_PAR_NONE );
@@ -73,7 +70,7 @@ main( void )
     // MODBUS RTU SLAVE ADDRESS 1, USART0 9600 8N1.
     eStatus = eMBInit( MB_RTU, 1, 0, 9600, MB_PAR_NONE );
 
-    eStatus = eMBSetSlaveID( 0x34, TRUE, ucSlaveID, 3 );
+    //eStatus = eMBSetSlaveID( 0x34, TRUE, ucSlaveID, 3 );
     sei(  );
 
     /* Enable the Modbus Protocol Stack. */
