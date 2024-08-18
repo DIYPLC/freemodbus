@@ -30,8 +30,8 @@
 /* ----------------------- Defines ------------------------------------------*/
 #define F_CPU 16000000UL // Arduino Nano quartz resonator Hz.
 
-#define REG_INPUT_START 1000
-#define REG_INPUT_NREGS 4
+//#define REG_INPUT_START 1000
+//#define REG_INPUT_NREGS 4
 
 #define REG_HOLDING_START 1
 #define REG_HOLDING_NREGS 16
@@ -45,8 +45,8 @@
 //#define REG_COILS_BYTES ((REG_COILS_NREGS % 8)?((REG_COILS_NREGS / 8 + 1)):(REG_COILS_NREGS / 8))
 
 /* ----------------------- Static variables ---------------------------------*/
-static USHORT   usRegInputStart = REG_INPUT_START;
-static USHORT   usRegInputBuf[REG_INPUT_NREGS];
+//static USHORT   usRegInputStart = REG_INPUT_START;
+//static USHORT   usRegInputBuf[REG_INPUT_NREGS];
 
 static USHORT   usRegHoldingStart = REG_HOLDING_START;
 static USHORT   usRegHoldingBuf[REG_HOLDING_NREGS];
@@ -84,10 +84,8 @@ main( void )
         ( void )eMBPoll(  );
 
         /* Here we simply count the number of poll cycles. */
-        usRegInputBuf[0]++   ; // INPUT REGISTER  999 int16
-        usRegInputBuf[1] =  2; // INPUT REGISTER 1000 int16
-        usRegInputBuf[2] =  3; // INPUT REGISTER 1001 int16
-        usRegInputBuf[3] = -5; // INPUT REGISTER 1002 int16
+        //usRegInputBuf[0]++   ; // INPUT REGISTER  999 int16
+        //usRegInputBuf[1] =  2; // INPUT REGISTER 1000 int16
 
         usRegHoldingBuf[0] = usRegHoldingBuf[0] + 1; // HOLDING REGISTER 0 int16
         usRegHoldingBuf[3] = usRegHoldingBuf[2] + usRegHoldingBuf[1]; // HOLDING REGISTER 3 int16
